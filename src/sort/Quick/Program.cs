@@ -6,20 +6,14 @@ namespace Quick
     {
         static void Main(string[] args)
         {
-            int[] arr = new int[] { 4, 6, 8, 4, 10, 9, 11, 8 };
+            int[] arr = new int[] { 12, 6, 14, 4, 10, 9, 15, 8 };
             Console.WriteLine("排序前:");
-            foreach (var item in arr)
-            {
-                Console.WriteLine(item);
-            }
+            ShowResult(arr);
 
             Sort(arr);
 
             Console.WriteLine("排序后:");
-            foreach (var item in arr)
-            {
-                Console.WriteLine(item);
-            }
+            ShowResult(arr);
         }
 
         static void Sort(int[] arr)
@@ -32,41 +26,54 @@ namespace Quick
         {
             if (leftIndex < rightIndex)
             {
-                int pivotIndex = SelectPivotIndex(arr, leftIndex, rightIndex);
-                QuickSort(arr, leftIndex, pivotIndex - 1);
-                QuickSort(arr, pivotIndex + 1, rightIndex);
-            }
-        }
+                int i, j, x;
+                i = leftIndex;
+                j = rightIndex;
+                x = arr[i];
 
-        /// <summary>
-        /// 选择基准值索引
-        /// </summary>
-        /// <param name="arr"></param>
-        /// <param name="leftIndex"></param>
-        /// <param name="rightIndex"></param>
-        private static int SelectPivotIndex(int[] arr, int leftIndex, int rightIndex)
-        {
-            int pivotIndex = leftIndex;
-            int startIndex = pivotIndex + 1;
-            for (int i = startIndex; i <= rightIndex; i++)
-            {
-                if (arr[i] < arr[pivotIndex])
+                Console.WriteLine($"基准值：{x}");
+
+                while (i < j)
                 {
-                    Swap(arr, i, startIndex);
-                    startIndex++;
+                    while (i < j && arr[j] > x)
+                    {
+                        j--;
+                    }
+
+                    if (i < j)
+                    {
+                        arr[i++] = arr[j];
+                        ShowResult(arr);
+                    }
+
+                    while (i < j && arr[i] < x)
+                    {
+                        i++;
+                    }
+
+                    if (i < j)
+                    {
+                        arr[j--] = arr[i];
+                        ShowResult(arr);
+                    }
                 }
+
+                arr[i] = x;
+
+                ShowResult(arr);
+
+                QuickSort(arr, leftIndex, i - 1);
+                QuickSort(arr, i + 1, rightIndex);
             }
-
-            Swap(arr, pivotIndex, startIndex - 1);
-
-            return startIndex - 1;
         }
 
-        private static void Swap(int[] arr, int i, int j)
+        static void ShowResult(int[] arr)
         {
-            var temp = arr[i];
-            arr[i] = arr[j];
-            arr[j] = temp;
+            for (int i = 0; i < arr.Length; i++)
+            {
+                Console.Write(arr[i] + " ");
+            }
+            Console.WriteLine();
         }
     }
 }
