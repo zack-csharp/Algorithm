@@ -1,12 +1,12 @@
 ﻿using System;
 
-namespace Bubble
+namespace Insertion
 {
     class Program
     {
         static void Main(string[] args)
         {
-            int[] arr = new int[] { 6, 8, 4, 10, 9, 11 };
+            int[] arr = new int[] { 12, 6, 14, 4, 10, 9, 15, 8 };
             Console.WriteLine("排序前:");
             ShowResult(arr);
 
@@ -19,20 +19,27 @@ namespace Bubble
         static void Sort(int[] arr)
         {
             int arrLength = arr.Length;
-            for (int i = 0; i < arrLength; i++)
+
+            for (int i = 1; i < arrLength; i++)
             {
-                for (int j = 0; j < arrLength - i - 1; j++)
+                int previousIndex = i - 1;
+                int currentElement = arr[i];
+
+                Console.WriteLine($"当前值：{currentElement}");
+
+                while (previousIndex >= 0 && arr[previousIndex] > currentElement)
                 {
-                    var currentElement = arr[j];
-                    var nextElement = arr[j + 1];
-                    if (currentElement > nextElement)
-                    {
-                        arr[j] = nextElement;
-                        arr[j + 1] = currentElement;
-                        ShowResult(arr);
-                    }
+                    arr[previousIndex + 1] = arr[previousIndex];
+                    previousIndex--;
+                    ShowResult(arr);
                 }
+
+                arr[previousIndex + 1] = currentElement;
+
+                ShowResult(arr);
             }
+
+
         }
 
         static void ShowResult(int[] arr)
