@@ -8,18 +8,12 @@ namespace Selection
         {
             int[] arr = new int[] { 6, 8, 4, 10, 9, 11 };
             Console.WriteLine("排序前:");
-            foreach (var item in arr)
-            {
-                Console.WriteLine(item);
-            }
+            ShowResult(arr);
 
             Sort(arr);
 
             Console.WriteLine("排序后:");
-            foreach (var item in arr)
-            {
-                Console.WriteLine(item);
-            }
+            ShowResult(arr);
         }
 
         static void Sort(int[] arr)
@@ -28,6 +22,7 @@ namespace Selection
             for (int i = 0; i < arrLength - 1; i++)
             {
                 int minElement = arr[i];
+                Console.WriteLine($"当前值：{minElement}");
                 int minIndex = i;
                 for (int j = i + 1; j < arrLength; j++)
                 {
@@ -41,7 +36,18 @@ namespace Selection
 
                 arr[minIndex] = arr[i];
                 arr[i] = minElement;
+
+                ShowResult(arr);
             }
+        }
+
+        static void ShowResult(int[] arr)
+        {
+            for (int i = 0; i < arr.Length; i++)
+            {
+                Console.Write(arr[i] + " ");
+            }
+            Console.WriteLine();
         }
     }
 }
