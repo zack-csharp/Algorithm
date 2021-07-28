@@ -7,13 +7,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{7067061C-349
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sort", "sort", "{37967A05-92CE-4B60-AEB9-F18C4300123B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bubble", "src\sort\Bubble\Bubble.csproj", "{CE24B853-56A7-48A8-9DBA-E4BE83CCF5DB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sort.Bubble", "src\sort\Bubble\Sort.Bubble.csproj", "{CE24B853-56A7-48A8-9DBA-E4BE83CCF5DB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Selection", "src\sort\Selection\Selection.csproj", "{16EEC2CB-1843-4382-AF8B-EBCBB4C0B850}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sort.Selection", "src\sort\Selection\Sort.Selection.csproj", "{16EEC2CB-1843-4382-AF8B-EBCBB4C0B850}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Quick", "src\sort\Quick\Quick.csproj", "{D8AE9073-7FD6-4152-B581-56E374F67876}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sort.Quick", "src\sort\Quick\Sort.Quick.csproj", "{D8AE9073-7FD6-4152-B581-56E374F67876}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Insertion", "src\sort\Insertion\Insertion.csproj", "{78872318-F7D8-438A-88DB-1EEF36AED194}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sort.Insertion", "src\sort\Insertion\Sort.Insertion.csproj", "{78872318-F7D8-438A-88DB-1EEF36AED194}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

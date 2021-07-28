@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Selection
+namespace Sort.Selection
 {
     class Program
     {

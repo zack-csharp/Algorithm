@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Quick
+namespace Sort.Quick
 {
     class Program
     {
